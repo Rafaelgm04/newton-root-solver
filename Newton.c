@@ -66,13 +66,25 @@ double escolhe_x (Newton *self){
     deriva(segunda_der);
     deriva(segunda_der);
 
-    if(funcao(self->poli,self->a)*funcao(segunda_der,self->a) > 0)
+        if (
+        funcao(self->poli, self->a) *
+        funcao(segunda_der, self->a) > 0
+    ) {
         return self->a;
-    else
+    }
+
+    if (
+        funcao(self->poli, self->b) *
+        funcao(segunda_der, self->b) > 0
+    ) {
         return self->b;
+    }
+
+    printf("Nao foi possivel escolher x0.\n");
+
+    return NAN;
 
 }
-
 
 void calcula_zero (Newton *self){
     //memset(self->x_n, 0, sizeof(self->x_n));
@@ -132,7 +144,7 @@ void calcula_zero (Newton *self){
 }
 
 
-
+/*
 int main(){
 
 
@@ -145,7 +157,7 @@ int main(){
     teste.erro = 0.000001;
     calcula_zero(&teste);
     printf("%u zero: %f",teste.n, teste.x_n[teste.n]);
-    /*
+  
     for(unsigned i = 0;i < tam_poli;i++){
         printf("%f,",teste.poli[i]);
 
@@ -159,6 +171,7 @@ int main(){
 
     double resu = funcao(teste.poli,1);
     printf("\nresu: %f\n",resu);
-    */
+    
     return 0;
 }
+*/

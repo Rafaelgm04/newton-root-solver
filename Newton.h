@@ -1,5 +1,3 @@
-
-
 #define tam_poli 11
 #define limete   100
 #define eps      1e-9
@@ -29,4 +27,5 @@ void   deriva (double *polinomio);
 void   get_poli (Newton *self, char *polinomio);
 double   escolhe_x (Newton *self); 
 void calcula_zero (Newton *self);
+double funcao(double *, double);
 
